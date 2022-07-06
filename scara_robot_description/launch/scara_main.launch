@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
-<launch>
-    <include file="$(find scara_robot_description)/launch/scara_spawn.launch" />
-    <include file="$(find scara_robot_description)/launch/scara_control.launch" />
-</launch>
