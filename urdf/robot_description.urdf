@@ -1,0 +1,164 @@
+<?xml version = "1.0"?>
+
+<robot name = "scara" >
+    <link name="world"/>
+
+    <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+    </joint>
+
+    <link name = "base_link">
+        <visual>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/base.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/base_low.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "20.03943414" />
+            <inertia ixx = "0.27146021" ixy = "0" ixz = "0" iyy = "0.27146020" iyz = "0" izz = "0.10467025"/>
+            <origin rpy = "0 0 0" xyz = "0 0 0.13285714" />
+        </inertial>
+    </link>
+
+    <joint name = "base_link_link_01" type = "revolute" >
+        <parent link = "base_link" />
+        <child link = "link_01" />
+        <origin rpy = "0 0 0" xyz = "0 0 0.33" />
+        <axis xyz = "0 0 1" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <!--TRANSMISSION-->
+    <transmission name = "base_link_brazo_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_link_link_01">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="base_link_link_01">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_01">
+        <visual>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/brazo.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/brazo_low.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "3.84886936" />
+            <inertia ixx = "0.00680632" ixy = "0" ixz = "0" iyy = "0.03365825" iyz = "0" izz = "0.03989022"/>
+            <origin rpy = "0 0 0" xyz = "0.1 0 0.01495486" />
+        </inertial>
+    </link>
+
+    <joint name = "link_01_link_02" type = "revolute" >
+        <parent link = "link_01" />
+        <child link = "link_02" />
+        <origin rpy = "0 0 0" xyz = "0.2 0 0.03" />
+        <axis xyz = "0 0 1" />
+        <limit effort = "10" lower = "-3.14" upper = "3.14" velocity = "0.5" />
+    </joint>
+
+    <!--TRANSMISSION-->
+    <transmission name = "link_01_brazo_2_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link_01_link_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="link_01_link_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_02">
+        <visual>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/brazo_2.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/brazo_low_2.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "3.84886936" />
+            <inertia ixx = "0.00680632" ixy = "0" ixz = "0" iyy = "0.03365825" iyz = "0" izz = "0.03989022"/>
+            <origin rpy = "0 0 0" xyz = "0.1 0 0.01495486" />
+        </inertial>
+    </link>
+
+    <joint name = "link_02_link_03" type = "prismatic" >
+        <parent link = "link_02"/>
+        <child link = "link_03"/>
+        <origin rpy = "0 0 0" xyz = "0.2 0 0.0" />
+        <axis xyz = "0 0 1"/>
+        <limit effort = "100" lower = "-0.15" upper = "0.0" velocity = "0.5" />
+    </joint>
+
+    <!--TRANSMISSION-->
+    <transmission name = "link_02_link_03_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link_02_link_03">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="link_02_link_03">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <link name = "link_03">
+        <visual>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/lineal.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <mesh filename = "package://scara_robot_description/meshes/lineal.stl" scale = "1 1 1"/>
+            </geometry>
+            <origin rpy = "0 0 0" xyz = "0 0 0"/>
+        </collision>
+
+        <inertial>
+            <mass value = "0.106"/>
+            <inertia ixx = "0.00020477" ixy = "0.0" ixz = "0.0" iyy = "0.00020477" iyz = "0.0" izz = "0.00001193"/>
+            <origin rpy = "0 0 0" xyz = "0 0 0.075"/>
+        </inertial>
+    </link>
+
+    <gazebo>
+        <plugin name = "gazebo_ros_control" filename = "libgazebo_ros_control.so">
+            <robotNamespace>/scara</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>

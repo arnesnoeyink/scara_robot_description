@@ -1,0 +1,22 @@
+scara:
+  # Publicar todos los estados de las articulaciones
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controladores de Posición
+  base_link_link_01_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: base_link_link_01
+    pid: {p: 10.0,i: 2.0,d: 1.2}
+
+  # Controladores de Posición
+  link_01_link_02_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: link_01_link_02
+    pid: {p: 10.0,i: 2.0,d: 1.2}
+
+  link_02_link_03_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: link_02_link_03
+    pid: {p: 100.0,i: 2.0,d: 1.2}
