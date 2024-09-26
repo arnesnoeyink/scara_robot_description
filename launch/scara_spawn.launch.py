@@ -11,10 +11,15 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
 
+    scara_robot_description_dir = get_package_share_directory('scara_robot_description')
+    world_path = os.path.join(scara_robot_description_dir, 'world','empty.world')
+
     gazebo =    IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
-                os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')))
-    
+                os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')),
+                                launch_arguments={'verbose': 'true',
+                                                  'pause':'false',
+                                                  'world': world_path}.items())
 
     scara_spawn_urdf =  IncludeLaunchDescription(
                         PythonLaunchDescriptionSource(
