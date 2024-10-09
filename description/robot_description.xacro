@@ -1,7 +1,34 @@
 <?xml version = "1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="scara">
 
-    <xacro:include filename="ros2_control.xacro" />
+    <xacro:arg name="joint1_p_gain" default="100"/>
+    <xacro:arg name="joint1_i_gain" default="10"/>
+    <xacro:arg name="joint1_d_gain" default="1"/>
+    <xacro:arg name="joint1_i_max" default="1"/>
+    <xacro:arg name="joint1_i_min" default="-1"/>
+    <xacro:arg name="joint1_cmd_max" default="1000"/>
+    <xacro:arg name="joint1_cmd_min" default="-1000"/>
+
+    <xacro:arg name="joint2_p_gain" default="100"/>
+    <xacro:arg name="joint2_i_gain" default="10"/>
+    <xacro:arg name="joint2_d_gain" default="1"/>
+    <xacro:arg name="joint2_i_max" default="1"/>
+    <xacro:arg name="joint2_i_min" default="-1"/>
+    <xacro:arg name="joint2_cmd_max" default="1000"/>
+    <xacro:arg name="joint2_cmd_min" default="-1000"/>
+
+    <xacro:arg name="joint3_p_gain" default="100"/>
+    <xacro:arg name="joint3_i_gain" default="10"/>
+    <xacro:arg name="joint3_d_gain" default="1"/>
+    <xacro:arg name="joint3_i_max" default="1"/>
+    <xacro:arg name="joint3_i_min" default="-1"/>
+    <xacro:arg name="joint3_cmd_max" default="1000"/>
+    <xacro:arg name="joint3_cmd_min" default="-1000"/>
+
+    <!-- <xacro:include filename="ros2_control.xacro" /> -->
+    <xacro:include filename="joint_position_control.xacro" />
+    <!-- <xacro:include filename="joint_trajectory_control.xacro" /> -->
+    <xacro:include filename="joint_state_publisher.xacro" />
 
     <link name="world"/>
 

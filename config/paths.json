@@ -1,25 +1,24 @@
 {
     "trajectories": {
-        "path": "/docker_ws/src/scara_robot_description/trajectories/j_trajectory.csv",
+        "path": "/home/arne/jazzy_ws/src/scara_robot_description/trajectories/j_trajectory.csv",
         "column_names": ["q1", "q2", "q3"],
-        "floating_base_path": "/docker_ws/src/scara_robot_description/trajectories/m_trajectory.csv",
+        "floating_base_path": "home/arne/jazzy_ws/src/scara_robot_description/trajectories/m_trajectory.csv",
         "fb_column_names": ["X", "Y", "Z"]
     }
     ,
     "command_paths": [
         "/scara/base_link_link_01_position_controller/command",
         "/scara/link_01_link_02_position_controller/command",
-        "/scara/link_02_link_03_position_controller/command" 
+        "/scara/link_02_link_03_position_controller/command"
     ],
     "state_paths": [
-        "/scara/base_link_link_01_position_controller/state",
-        "/scara/link_01_link_02_position_controller/state",
-        "/scara/link_02_link_03_position_controller/state"
+        "/joint_states"
+
     ],
     "client_paths": [
-        "/scara/base_link_link_01_position_controller/pid",
-        "/scara/link_01_link_02_position_controller/pid",
-        "/scara/link_02_link_03_position_controller/pid"
+        "/scara/base_link_link_01_position_controller/pid", // TODO
+        "/scara/link_01_link_02_position_controller/pid",   // TODO
+        "/scara/link_02_link_03_position_controller/pid"    // TODO
     ],
     "pid_bounds": {
         "p":[

@@ -22,12 +22,15 @@
       <heading_deg>180</heading_deg>
     </spherical_coordinates> -->
 
-    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+    <!-- <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
       <update_rate>10.0</update_rate>
     </plugin>
 
-    <plugin name="gazebo_ros_properties" filename="libgazebo_ros_properties.so">
-    </plugin>
+    <plugin name="gazebo_ros_properties" filename="libgazebo_ros_properties.so"></plugin> -->
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"></plugin>
+
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"> </plugin>
 
     
 

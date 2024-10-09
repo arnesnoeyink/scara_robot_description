@@ -1,0 +1,41 @@
+<?xml version = "1.0"?>
+    <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+        <gazebo>
+
+            <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+                <joint_name>base_link_link_01</joint_name>   
+                <topic>/scara/base_link_link_01_position_controller/command</topic>
+                <p_gain>${joint1_p_gain}</p_gain>
+                <i_gain>${joint1_i_gain}</i_gain>
+                <d_gain>${joint1_d_gain}</d_gain>
+                <i_max>${joint1_i_max}</i_max>
+                <i_min>${joint1_i_min}</i_min>
+                <cmd_max>${joint1_cmd_max}</cmd_max>
+                <cmd_min>${joint1_cmd_min}</cmd_min>
+            </plugin>
+
+            <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+                <joint_name>link_01_link_02</joint_name>
+                <topic>/scara/link_01_link_02_position_controller/command</topic>
+                <p_gain>${joint2_p_gain}</p_gain>
+                <i_gain>${joint2_i_gain}</i_gain>
+                <d_gain>${joint2_d_gain}</d_gain>
+                <i_max>${joint2_i_max}</i_max>
+                <i_min>${joint2_i_min}</i_min>
+                <cmd_max>${joint2_cmd_max}</cmd_max>
+                <cmd_min>${joint2_cmd_min}</cmd_min>
+            </plugin>
+
+            <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+                <joint_name>link_02_link_03</joint_name>
+                <topic>/scara/link_02_link_03_position_controller/command</topic>
+                <p_gain>${joint3_p_gain}</p_gain>
+                <i_gain>${joint3_i_gain}</i_gain>
+                <d_gain>${joint3_d_gain}</d_gain>
+                <i_max>${joint3_i_max}</i_max>
+                <i_min>${joint3_i_min}</i_min>
+                <cmd_max>${joint3_cmd_max}</cmd_max>
+                <cmd_min>${joint3_cmd_min}</cmd_min>
+            </plugin>
+        </gazebo>
+</robot>
