@@ -11,10 +11,6 @@
         "/scara/link_01_link_02_position_controller/command",
         "/scara/link_02_link_03_position_controller/command"
     ],
-    "state_paths": [
-        "/joint_states"
-
-    ],
     "client_paths": [
         "/scara/base_link_link_01_position_controller/pid", // TODO
         "/scara/link_01_link_02_position_controller/pid",   // TODO

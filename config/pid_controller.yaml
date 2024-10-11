@@ -1,0 +1,26 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30
+    use_sim_time: true
+
+    pid_controller:
+      type: pid_controller/PidController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+pid_controller:
+  ros__parameters:
+    dof_names:
+      - base_link_link_01
+      - link_01_link_02
+      - link_02_link_03
+
+    command_interface: position
+
+    reference_and_state_interfaces: ["position"]
+
+    gains:
+      base_link_link_01: {p: 1.0, i: 2.0, d: 10.0, i_clamp_max: 5.0, i_clamp_min: -5.0}
+      link_01_link_02: {p: 1.0, i: 2.0, d: 10.0, i_clamp_max: 5.0, i_clamp_min: -5.0}
+      link_02_link_03: {p: 1.0, i: 2.0, d: 10.0, i_clamp_max: 5.0, i_clamp_min: -5.0}

@@ -94,11 +94,12 @@ def generate_launch_description():
             output='screen',
             arguments=[
                 '/world/empty/control@ros_gz_interfaces/srv/ControlWorld',
-                '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-                '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
-                '/scara/base_link_link_01_position_controller/command@std_msgs/msg/Float64@gz.msgs.Double',
-                '/scara/link_01_link_02_position_controller/command@std_msgs/msg/Float64@gz.msgs.Double',
-                '/scara/link_02_link_03_position_controller/command@std_msgs/msg/Float64@gz.msgs.Double'
+                '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'
+                # ,
+                # '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
+                # '/scara/base_link_link_01_position_controller/command@std_msgs/msg/Float64@gz.msgs.Double',
+                # '/scara/link_01_link_02_position_controller/command@std_msgs/msg/Float64@gz.msgs.Double',
+                # '/scara/link_02_link_03_position_controller/command@std_msgs/msg/Float64@gz.msgs.Double'
                 #,
                 #'/world/empty/remove@ros_gz_interfaces/srv/DeleteEntity',
             ]
