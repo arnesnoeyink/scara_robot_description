@@ -1,8 +1,8 @@
 {
     "trajectories": {
-        "path": "/home/arne/jazzy_ws/src/scara_robot_description/trajectories/j_trajectory.csv",
+        "path": "/home/arne/jazzy_ws/install/scara_robot_description/share/scara_robot_description/trajectories/j_trajectory.csv",
         "column_names": ["q1", "q2", "q3"],
-        "floating_base_path": "home/arne/jazzy_ws/src/scara_robot_description/trajectories/m_trajectory.csv",
+        "floating_base_path": "/home/arne/jazzy_ws/install/scara_robot_description/share/scara_robot_description/trajectories/m_trajectory.csv",
         "fb_column_names": ["X", "Y", "Z"]
     },
     "pid_bounds": {

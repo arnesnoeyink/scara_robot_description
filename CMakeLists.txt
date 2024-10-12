@@ -30,7 +30,7 @@ endif()
 
 install(
   DIRECTORY
-    launch description meshes config rviz worlds
+    launch description meshes config rviz worlds trajectories
   DESTINATION share/${PROJECT_NAME}/)
 
 ament_package()
