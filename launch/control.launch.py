@@ -1,6 +1,5 @@
-import launch
+from launch import LaunchDescription
 from launch_ros.actions import Node
-
 
 def generate_launch_description():
 
@@ -16,8 +15,10 @@ def generate_launch_description():
         arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
     )
 
-    return launch.LaunchDescription([joint_state_broadcaster_spawner,
-                                     pid_controller_spawner])
+    return LaunchDescription([
+        joint_state_broadcaster_spawner,
+        pid_controller_spawner
+        ])
 
 
 
