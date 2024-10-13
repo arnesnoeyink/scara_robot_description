@@ -2,9 +2,6 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="scara">
 
     <xacro:include filename="ros2_control.xacro" />
-    <!-- <xacro:include filename="joint_position_control.xacro" /> -->
-    <!-- <xacro:include filename="joint_trajectory_control.xacro" /> -->
-    <!-- <xacro:include filename="joint_state_publisher.xacro" /> -->
 
     <link name="world"/>
 
