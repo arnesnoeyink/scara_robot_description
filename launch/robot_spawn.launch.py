@@ -3,7 +3,8 @@ import xacro
 from launch import LaunchDescription
 from ament_index_python.packages import get_package_share_directory
 from launch_ros.actions import Node
-
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
 
@@ -13,6 +14,8 @@ def generate_launch_description():
 
     xacro_file = os.path.join(get_package_share_directory(pkg_name),file_subpath)
     robot_description_raw = xacro.process_file(xacro_file).toxml()
+
+    ld = LaunchDescription()
 
     node_robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -28,18 +31,9 @@ def generate_launch_description():
             '-name', robotXacroName, 
             '-topic', 'robot_description'
         ],
-        output='screen'
-    )
+        output='screen')
 
-    rviz2 = Node(
-        package='rviz2', 
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d' + os.path.join(get_package_share_directory('scara_robot_description'), 'rviz', 'scara.rviz')])
+    ld.add_action(node_robot_state_publisher)
+    ld.add_action(spawn_entity)
 
-    return LaunchDescription([
-        node_robot_state_publisher,
-        spawn_entity,
-        rviz2
-        ])
+    return ld
