@@ -22,7 +22,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename = "file://$(find scara_robot_description)/meshes/base_low.stl" scale = "1 1 1"/>
+                <mesh filename = "file://$(find scara_robot_description)/meshes/base.stl" scale = "1 1 1"/>
             </geometry>
             <origin rpy = "0 0 0" xyz = "0 0 0"/>
         </collision>
@@ -50,7 +50,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename = "file://$(find scara_robot_description)/meshes/brazo_low.stl" scale = "1 1 1"/>
+                <mesh filename = "file://$(find scara_robot_description)/meshes/brazo.stl" scale = "1 1 1"/>
             </geometry>
             <origin rpy = "0 0 0" xyz = "0 0 0"/>
         </collision>
@@ -78,7 +78,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename = "file://$(find scara_robot_description)/meshes/brazo_low_2.stl" scale = "1 1 1"/>
+                <mesh filename = "file://$(find scara_robot_description)/meshes/brazo_2.stl" scale = "1 1 1"/>
             </geometry>
             <origin rpy = "0 0 0" xyz = "0 0 0"/>
         </collision>
